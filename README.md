@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hotel Sur - Sitio Web Oficial
 
-## Getting Started
+![Hotel Sur Logo](public/images/logo.png)
 
-First, run the development server:
+Este es el repositorio del sitio web oficial de Hotel Sur, banda de rock y electrónica originaria de Tarancón (Cuenca).
+
+## Sobre Hotel Sur
+
+Hotel Sur es un proyecto musical formado en 2019 que fusiona rock alternativo y música electrónica. La banda explora territorios sonoros que van desde el post-punk y el rock psicodélico hasta la electrónica de vanguardia, creando paisajes sonoros envolventes y letras que invitan a la reflexión.
+
+## Características del sitio
+
+- **Diseño minimalista**: Con una estética moderna y depurada que refleja la identidad visual de la banda
+- **Secciones informativas**: Sobre la banda, discografía, próximos conciertos y novedades
+- **Formulario de contacto**: Para comunicación directa con el grupo o solicitudes de booking
+- **Integración con plataformas**: Enlaces directos a plataformas de streaming y redes sociales
+
+## Tecnologías utilizadas
+
+Este sitio está desarrollado con Next.js, React, Tailwind CSS y componentes de UI personalizados basados en shadcn/ui.
+
+## Desarrollo local
+
+Si deseas ejecutar este proyecto en tu entorno local:
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/usuario/hotel-sur-2025.git
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visita [http://localhost:3000](http://localhost:3000) para ver el sitio en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contacto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para contactar con Hotel Sur:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Email: somoshotelsur@gmail.com
+- Instagram: [@hotelsur](https://instagram.com/hotelsur)

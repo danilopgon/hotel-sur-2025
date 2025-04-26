@@ -1,6 +1,7 @@
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import type { Metadata } from 'next';
+import { Toaster } from 'sonner';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Navbar />
         <main className='flex-grow'>{children}</main>
         <Footer />
+        <Toaster position="top-center" />
       </body>
     </html>
   );
