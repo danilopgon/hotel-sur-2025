@@ -1,26 +1,45 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme  {
+ --color-primary: #f55033;
+  --color-neutral-900: #0A0A0A;
+  --color-neutral-800: #111111;
+  --color-neutral-700: #1A1A1A;
+  --color-neutral-0: #FFFFFF;
+  --color-communicator-light: #F0F0F0;
+  --color-communicator-lighter: #E0E0E0;
+  --color-communicator-dark: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'Eurostile-Bold';
+  src: url('/fonts/eurostile-bold.otf');
+  font-weight: bold;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Eurostile-Medium';
+  src: url('/fonts/eurostile-medium.otf');
+  font-weight: normal;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root 
+{
+  --font-family: 'Eurostile-Medium', sans-serif;
+  --font-family-bold: 'Eurostile-Bold', sans-serif;
+  --font-size: 16px;
+  --line-height: 1.5;
+  --letter-spacing: 0.25rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family-bold);
+}
+
+p {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
 }
