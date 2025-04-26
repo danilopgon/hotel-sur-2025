@@ -5,17 +5,29 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function SecondSection() {
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
 
   const titleOpacity = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
-
   const titleY = useTransform(scrollYProgress, [0.2, 0.3], [50, 0]);
-
   const contentOpacity = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
-
   const contentY = useTransform(scrollYProgress, [0.3, 0.4], [50, 0]);
 
   return (
@@ -25,8 +37,8 @@ export default function SecondSection() {
         <motion.h2
           className='text-2xl md:text-4xl font-bold text-primary mb-8 border-b-primary border-b-2 pb-4 uppercase'
           style={{
-            opacity: shouldReduceMotion ? 1 : titleOpacity,
-            y: shouldReduceMotion ? 0 : titleY,
+            opacity: shouldReduceMotion || isMobile ? 1 : titleOpacity,
+            y: shouldReduceMotion || isMobile ? 0 : titleY,
           }}
         >
           &quot;Llevame contigo y enseñame a volar&quot;
@@ -35,18 +47,18 @@ export default function SecondSection() {
         <motion.p
           className='text-xl md:text-2xl text-neutral-900 max-w-2xl text-center'
           style={{
-            opacity: shouldReduceMotion ? 1 : contentOpacity,
-            y: shouldReduceMotion ? 0 : contentY,
+            opacity: shouldReduceMotion || isMobile ? 1 : contentOpacity,
+            y: shouldReduceMotion || isMobile ? 0 : contentY,
           }}
         >
           Escuchanos en Spotify
         </motion.p>
 
         <motion.div
-          className='w-full max-w-3xl mt-8'
+          className='w-full max-w-3xl mt-8 mb-16 md:mb-8'
           style={{
-            opacity: shouldReduceMotion ? 1 : contentOpacity,
-            y: shouldReduceMotion ? 0 : contentY,
+            opacity: shouldReduceMotion || isMobile ? 1 : contentOpacity,
+            y: shouldReduceMotion || isMobile ? 0 : contentY,
           }}
         >
           <iframe
