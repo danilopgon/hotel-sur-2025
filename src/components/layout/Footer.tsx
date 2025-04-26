@@ -57,19 +57,21 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href='/merchandising'
-                  className='hover:text-primary transition-colors'
-                >
-                  Merchandising
-                </Link>
-              </li>
-              <li>
-                <Link
                   href='/contacto'
                   className='hover:text-primary transition-colors'
                 >
                   Contacto
                 </Link>
+              </li>
+              <li>
+                <a
+                  href='https://tienda.hotelsur.es'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='hover:text-primary transition-colors'
+                >
+                  Merchandising
+                </a>
               </li>
             </ul>
           </div>

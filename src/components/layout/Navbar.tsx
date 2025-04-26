@@ -39,18 +39,6 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/merchandising">
-                <Button
-                  variant={isActive('/merchandising') ? 'default' : 'ghost'}
-                  className={isActive('/merchandising') 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'hover:bg-black/20 text-primary'}
-                >
-                  Merchandising
-                </Button>
-              </Link>
-            </li>
-            <li>
               <Link href="/contacto">
                 <Button
                   variant={isActive('/contacto') ? 'default' : 'ghost'}
@@ -61,6 +49,30 @@ export default function Navbar() {
                   Contacto
                 </Button>
               </Link>
+            </li>
+            <li>
+              <a href="https://tienda.hotelsur.es" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="hover:bg-black/10 text-primary border-primary/30 flex items-center gap-1"
+                >
+                  Merchandising
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="14" 
+                    height="14" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <path d="M7 7h10v10"></path>
+                    <path d="M7 17L17 7"></path>
+                  </svg>
+                </Button>
+              </a>
             </li>
           </ul>
         </nav>
