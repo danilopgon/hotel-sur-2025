@@ -76,9 +76,10 @@ export default function Contacto() {
     <div className='bg-neutral-900 text-white'>
       <div className='container mx-auto px-4 py-20'>
         <div className='relative z-10 min-h-screen'>
-          <h1 className='text-4xl font-bold mb-8'>Contacto</h1>
-
-          <div className='max-w-2xl mx-auto'>
+          <div className='max-w-2xl mx-auto pt-8'>
+            <h1 className='text-4xl font-bold mb-8 uppercase text-primary'>
+              Contacto
+            </h1>
             <p className='text-xl mb-8'>
               Si quieres contactar con nosotros, puedes enviarnos un mensaje a
               través de este formulario.
