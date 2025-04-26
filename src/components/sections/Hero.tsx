@@ -1,8 +1,9 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 export default function Hero() {
   const { scrollY } = useScroll();
+  const shouldReduceMotion = useReducedMotion();
 
   const bgY = useTransform(scrollY, [0, 400, 700], [-50, 0, 0]);
   const scale = useTransform(scrollY, [0, 300], [1.5, 1]);
@@ -15,8 +16,8 @@ export default function Hero() {
         <motion.div
           className='absolute inset-0 z-0'
           style={{
-            y: bgY,
-            scale,
+            y: shouldReduceMotion ? 0 : bgY,
+            scale: shouldReduceMotion ? 1 : scale,
             backgroundImage: "url('/images/fondo-escritorio.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
@@ -36,8 +37,8 @@ export default function Hero() {
         <div className='sticky top-[4rem] flex justify-end p-6 md:p-12'>
           <motion.div
             style={{
-              opacity: scrollY.get() < 200 ? opacity : 1,
-              y: scrollY.get() < 200 ? initialY : 0,
+              opacity: shouldReduceMotion ? 1 : (scrollY.get() < 200 ? opacity : 1),
+              y: shouldReduceMotion ? 0 : (scrollY.get() < 200 ? initialY : 0),
             }}
             className='pb-24 md:pb-36 text-right text-primary'
           >
