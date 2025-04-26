@@ -72,7 +72,6 @@ export default function SecondSection() {
             src='https://open.spotify.com/embed/artist/5ZsW4wbMl8qYFZ0L9xvBeu?utm_source=generator&theme=0'
             width='100%'
             height='352'
-            allowTransparency={true}
             allow='encrypted-media'
             loading='lazy'
           ></iframe>
