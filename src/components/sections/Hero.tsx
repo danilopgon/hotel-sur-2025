@@ -35,7 +35,7 @@ export default function Hero() {
         />
 
         <motion.div
-          className='absolute inset-0 z-5 pointer-events-none mix-blend-overlay'
+          className='absolute inset-0 z-5 pointer-events-none mix-blend-soft-light'
           style={{
             opacity: shouldReduceMotion ? 0.9 : grainOpacity,
             backgroundImage: "url('/images/ruido.gif')",

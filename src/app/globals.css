@@ -1,18 +1,17 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
-/* Primero definimos colores base directamente en :root */
 :root {
   /* Colores base */
   --color-primary: #f55033;
-  --color-neutral-900: #0A0A0A;
+  --color-neutral-900: #0a0a0a;
   --color-neutral-800: #111111;
-  --color-neutral-700: #1A1A1A;
-  --color-neutral-0: #FFFFFF;
-  --color-communicator-light: #F0F0F0;
-  --color-communicator-lighter: #E0E0E0;
+  --color-neutral-700: #1a1a1a;
+  --color-neutral-0: #ffffff;
+  --color-communicator-light: #f0f0f0;
+  --color-communicator-lighter: #e0e0e0;
   --color-communicator-dark: #000000;
 
   /* Fuentes */
@@ -22,7 +21,7 @@
   --line-height: 1.5;
   --letter-spacing: 0.25rem;
   --radius: 0.625rem;
-  
+
   /* Mapeo de variables de Shadcn a nuestras variables base */
   --background: var(--color-neutral-0);
   --foreground: var(--color-neutral-900);
@@ -42,7 +41,7 @@
   --border: var(--color-neutral-700);
   --input: var(--color-neutral-700);
   --ring: var(--color-primary);
-  
+
   /* Variables del sidebar */
   --sidebar: var(--color-neutral-0);
   --sidebar-foreground: var(--color-neutral-900);
@@ -52,7 +51,7 @@
   --sidebar-accent-foreground: var(--color-neutral-0);
   --sidebar-border: var(--color-neutral-700);
   --sidebar-ring: var(--color-primary);
-  
+
   /* Variables de gráficos */
   --chart-1: #4a88db;
   --chart-2: #50c0e9;
@@ -86,7 +85,9 @@
   font-weight: normal;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-family-bold);
 }
 
@@ -98,45 +99,44 @@ p {
 }
 
 @theme inline {
- --radius-sm: calc(var(--radius) - 4px);
- --radius-md: calc(var(--radius) - 2px);
- --radius-lg: var(--radius);
- --radius-xl: calc(var(--radius) + 4px);
- --color-background: var(--background);
- --color-foreground: var(--foreground);
- --color-card: var(--card);
- --color-card-foreground: var(--card-foreground);
- --color-popover: var(--popover);
- --color-popover-foreground: var(--popover-foreground);
- --color-primary: var(--primary);
- --color-primary-foreground: var(--primary-foreground);
- --color-secondary: var(--secondary);
- --color-secondary-foreground: var(--secondary-foreground);
- --color-muted: var(--muted);
- --color-muted-foreground: var(--muted-foreground);
- --color-accent: var(--accent);
- --color-accent-foreground: var(--accent-foreground);
- --color-destructive: var(--destructive);
- --color-border: var(--border);
- --color-input: var(--input);
- --color-ring: var(--ring);
- --color-chart-1: var(--chart-1);
- --color-chart-2: var(--chart-2);
- --color-chart-3: var(--chart-3);
- --color-chart-4: var(--chart-4);
- --color-chart-5: var(--chart-5);
- --color-sidebar: var(--sidebar);
- --color-sidebar-foreground: var(--sidebar-foreground);
- --color-sidebar-primary: var(--sidebar-primary);
- --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
- --color-sidebar-accent: var(--sidebar-accent);
- --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
- --color-sidebar-border: var(--sidebar-border);
- --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 .dark {
-  /* Modo oscuro usando tus colores personalizados */
   --background: var(--color-neutral-900);
   --foreground: var(--color-neutral-0);
   --card: var(--color-neutral-800);
@@ -155,7 +155,7 @@ p {
   --border: var(--color-neutral-0, 0.1);
   --input: var(--color-neutral-0, 0.1);
   --ring: var(--color-primary);
-  
+
   /* Variables del sidebar en modo oscuro */
   --sidebar: var(--color-neutral-800);
   --sidebar-foreground: var(--color-neutral-0);
