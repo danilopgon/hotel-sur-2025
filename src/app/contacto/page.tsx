@@ -75,8 +75,8 @@ export default function Contacto() {
   return (
     <div className='bg-neutral-900 text-white'>
       <div className='container mx-auto px-4 py-20'>
-        <div className='relative z-10 min-h-screen'>
-          <div className='max-w-2xl mx-auto pt-8'>
+        <div className='relative z-10 min-h-screen flex justify-center items-center'>
+          <div className='max-w-2xl mx-auto'>
             <h1 className='text-4xl font-bold mb-8 uppercase text-primary'>
               Contacto
             </h1>
