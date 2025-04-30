@@ -1,14 +1,24 @@
 'use client';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
 
 export default function Hero() {
   const { scrollY } = useScroll();
   const shouldReduceMotion = useReducedMotion();
 
-  const bgY = useTransform(scrollY, [0, 400, 700], [-50, 0, 0]);
-  const scale = useTransform(scrollY, [0, 300], [1.5, 1]);
-  const opacity = useTransform(scrollY, [0, 200], [0, 1]);
-  const initialY = useTransform(scrollY, [0, 200], [100, 0]);
+  const bgY = useTransform(scrollY, [0, 400, 700], [0, -25, -50]);
+  const scale = useTransform(scrollY, [0, 300, 500], [1, 1.25, 1.5]);
+  const textOpacity = useTransform(scrollY, [300, 500], [1, 0]);
+  const textY = useTransform(scrollY, [300, 700], [0, -50]);
+  const grainOpacity = useTransform(
+    scrollY,
+    [0, 400, 600, 900],
+    [0.6, 0.9, 1, 1]
+  );
 
   return (
     <>
@@ -24,21 +34,22 @@ export default function Hero() {
           }}
         />
 
-        <div
-          className='absolute inset-0 z-5 pointer-events-none mix-blend-overlay opacity-90'
+        <motion.div
+          className='absolute inset-0 z-5 pointer-events-none mix-blend-overlay'
           style={{
+            opacity: shouldReduceMotion ? 0.9 : grainOpacity,
             backgroundImage: "url('/images/ruido.gif')",
             backgroundRepeat: 'repeat',
           }}
         />
       </div>
 
-      <div className='min-h-[200vh] relative'>
+      <div className='min-h-[150vh] relative'>
         <div className='sticky top-[4rem] flex justify-end p-6 md:p-12'>
           <motion.div
             style={{
-              opacity: shouldReduceMotion ? 1 : (scrollY.get() < 200 ? opacity : 1),
-              y: shouldReduceMotion ? 0 : (scrollY.get() < 200 ? initialY : 0),
+              opacity: shouldReduceMotion ? 1 : textOpacity,
+              y: shouldReduceMotion ? 0 : textY,
             }}
             className='pb-24 md:pb-36 text-right text-primary'
           >
@@ -48,9 +59,7 @@ export default function Hero() {
             <h3 className='text-xl md:text-2xl mt-4 uppercase'>
               Aguas Rojas II (Tras La Tormenta)
             </h3>
-            <p className='text-lg md:text-xl mt-4 uppercase'>
-              30/05/2025
-            </p>
+            <p className='text-lg md:text-xl mt-4 uppercase'>30/05/2025</p>
           </motion.div>
         </div>
       </div>
