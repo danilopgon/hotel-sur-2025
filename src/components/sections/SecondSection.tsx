@@ -45,13 +45,28 @@ export default function SecondSection() {
         </motion.h2>
 
         <motion.p
-          className='text-xl md:text-2xl text-neutral-900 max-w-2xl text-center'
+          className='text-xl md:text-2xl text-neutral-900 max-w-3xl text-left mb-8 text-balance'
           style={{
             opacity: shouldReduceMotion || isMobile ? 1 : contentOpacity,
             y: shouldReduceMotion || isMobile ? 0 : contentY,
           }}
         >
-          Escuchanos en Spotify
+          Hotel Sur es un proyecto musical fundado en 2019 que fusiona rock
+          alternativo y electrónica con una identidad propia. Su sonido viaja
+          entre el post-punk y la electrónica más experimental, tejiendo
+          paisajes sonoros envolventes y letras cargadas de emoción y
+          pensamiento crítico. Actualmente, la banda se encuentra inmersa en el
+          lanzamiento de su segundo LP.
+        </motion.p>
+
+        <motion.p
+          className='text-md md:text-lg text-neutral-900 max-w-2xl text-center'
+          style={{
+            opacity: shouldReduceMotion || isMobile ? 1 : contentOpacity,
+            y: shouldReduceMotion || isMobile ? 0 : contentY,
+          }}
+        >
+          Escucha nuestros temas en Spotify:
         </motion.p>
 
         <motion.div

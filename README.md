@@ -6,7 +6,7 @@ Este es el repositorio del sitio web oficial de Hotel Sur, banda de rock y elect
 
 ## Sobre Hotel Sur
 
-Hotel Sur es un proyecto musical formado en 2019 que fusiona rock alternativo y música electrónica. La banda explora territorios sonoros que van desde el post-punk y el rock psicodélico hasta la electrónica de vanguardia, creando paisajes sonoros envolventes y letras que invitan a la reflexión.
+Hotel Sur es un proyecto musical fundado en 2019 que fusiona rock alternativo y electrónica con una identidad propia. Su sonido viaja entre el post-punk, el rock psicodélico y la electrónica más experimental, tejiendo paisajes sonoros envolventes y letras cargadas de emoción y pensamiento crítico. Actualmente, la banda se encuentra inmersa en el lanzamiento de su segundo LP.
 
 ## Características del sitio
 
