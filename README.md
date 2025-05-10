@@ -13,28 +13,12 @@ Hotel Sur es un proyecto musical fundado en 2019 que fusiona rock alternativo y 
 - **Diseño minimalista**: Con una estética moderna y depurada que refleja la identidad visual de la banda
 - **Secciones informativas**: Sobre la banda, discografía, próximos conciertos y novedades
 - **Formulario de contacto**: Para comunicación directa con el grupo o solicitudes de booking
-- **Integración con plataformas**: Enlaces directos a plataformas de streaming y redes sociales
+- **Integración con plataformas**: Enlaces directos a plataformas de streaming.
+- **Conexión con tienda en Fourthwall**: Acceso a la tienda oficial de la banda para adquirir merchandising y discos.
 
 ## Tecnologías utilizadas
 
 Este sitio está desarrollado con Next.js, React, Tailwind CSS y componentes de UI personalizados basados en shadcn/ui.
-
-## Desarrollo local
-
-Si deseas ejecutar este proyecto en tu entorno local:
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/usuario/hotel-sur-2025.git
-
-# Instalar dependencias
-npm install
-
-# Iniciar servidor de desarrollo
-npm run dev
-```
-
-Visita [http://localhost:3000](http://localhost:3000) para ver el sitio en tu navegador.
 
 ## Contacto
 
