@@ -1,4 +1,5 @@
 import Footer from '@/components/layout/Footer';
+import LenisWrapper from '@/components/layout/LenisWrapper';
 import Navbar from '@/components/layout/Navbar';
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
@@ -27,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className='antialiased min-h-screen flex flex-col overflow-x-hidden'>
-        <Navbar />
-        <main className='flex-grow'>{children}</main>
-        <Footer />
-        <Toaster position="top-center" />
+        <LenisWrapper>
+          <Navbar />
+          <main className='flex-grow'>{children}</main>
+          <Footer />
+        </LenisWrapper>
+        <Toaster position='top-center' />
       </body>
     </html>
   );

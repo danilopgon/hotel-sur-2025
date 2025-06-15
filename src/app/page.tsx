@@ -1,7 +1,7 @@
 'use client';
-import Hero from '@/components/sections/Hero';
-import SecondSection from '@/components/sections/SecondSection';
-import ThirdSection from '@/components/sections/ThirdSection';
+import NextRelease from '@/components/sections/NextRelease';
+import AboutUs from '@/components/sections/AboutUs';
+import Shop from '@/components/sections/Shop';
 import { useRef } from 'react';
 
 export default function Home() {
@@ -9,10 +9,10 @@ export default function Home() {
 
   return (
     <div ref={ref} className='relative'>
-      <div className='relative z-10 min-h-[350vh]'>
-        <Hero />
-        <SecondSection />
-        <ThirdSection />
+      <div className='relative z-10 min-h-[350vh] overflow-hidden'>
+        <NextRelease />
+        <AboutUs />
+        <Shop />
       </div>
     </div>
   );

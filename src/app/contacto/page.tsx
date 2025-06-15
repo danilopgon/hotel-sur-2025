@@ -17,7 +17,6 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-// Esquema de validación para el formulario
 const formSchema = z.object({
   name: z
     .string()

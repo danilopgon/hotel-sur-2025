@@ -1,38 +1,90 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
-  const { scrollY } = useScroll();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const isHomePage = pathname === '/';
-  const navbarOpacity = useTransform(scrollY, [150, 300], [0, 1]);
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
   const isActive = (path: string) => pathname === path;
 
-  // Check if screen is mobile size
   useEffect(() => {
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
     checkIsMobile();
     window.addEventListener('resize', checkIsMobile);
-
-    return () => {
-      window.removeEventListener('resize', checkIsMobile);
-    };
+    return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 
-  // Close mobile menu when changing route
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!navbarRef.current) return;
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    if (reduceMotion) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateNavbar = () => {
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY > lastScrollY ? 'down' : 'up';
+
+      if (direction === 'down' && currentScrollY > 100) {
+        gsap.to(navbarRef.current, {
+          y: -100,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      } else if (direction === 'up') {
+        gsap.to(navbarRef.current, { y: 0, duration: 0.3, ease: 'power2.out' });
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (mobileMenuRef.current) {
+      gsap.to(mobileMenuRef.current, {
+        height: isOpen ? 'auto' : 0,
+        opacity: isOpen ? 1 : 0,
+        duration: 0.3,
+        ease: 'power2.out',
+        display: isOpen ? 'block' : 'none',
+      });
+    }
+  }, [isOpen]);
 
   const navItems = [
     { href: '/', label: 'Inicio' },
@@ -40,19 +92,15 @@ export default function Navbar() {
   ];
 
   return (
-    <motion.div
-      className='fixed top-0 left-0 right-0 z-20 backdrop-blur-sm bg-neutral-700/80'
-      style={{ opacity: isHomePage ? navbarOpacity : 1 }}
-      initial={{ opacity: isHomePage ? 0 : 1 }}
+    <div
+      ref={navbarRef}
+      className='fixed top-0 left-0 right-0 z-20 backdrop-blur-sm bg-neutral-700/80 opacity-100'
     >
       <div className='container mx-auto flex justify-between items-center p-4'>
-        <div className='flex items-center space-x-2'>
-          <Link href='/'>
-            <span className='text-lg font-bold text-primary'>HOTEL SUR</span>
-          </Link>
-        </div>
+        <Link href='/'>
+          <span className='text-lg font-bold text-primary'>HOTEL SUR</span>
+        </Link>
 
-        {/* Mobile hamburger button */}
         {isMobile && (
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -77,7 +125,6 @@ export default function Navbar() {
           </button>
         )}
 
-        {/* Desktop Navigation */}
         {!isMobile && (
           <nav>
             <ul className='flex space-x-6'>
@@ -130,18 +177,11 @@ export default function Navbar() {
         )}
       </div>
 
-      {/* Mobile Menu */}
       {isMobile && (
-        <motion.nav
-          className={`${
-            isOpen ? 'block' : 'hidden'
-          } absolute w-full bg-neutral-800/95 backdrop-blur-sm shadow-lg`}
-          initial={{ height: 0, opacity: 0 }}
-          animate={{
-            height: isOpen ? 'auto' : 0,
-            opacity: isOpen ? 1 : 0,
-          }}
-          transition={{ duration: 0.3 }}
+        <div
+          ref={mobileMenuRef}
+          className='overflow-hidden absolute w-full bg-neutral-800/95 backdrop-blur-sm shadow-lg'
+          style={{ height: 0, opacity: 0, display: 'none' }}
         >
           <ul className='flex flex-col py-4 px-6 space-y-4'>
             {navItems.map((item) => (
@@ -190,8 +230,8 @@ export default function Navbar() {
               </a>
             </li>
           </ul>
-        </motion.nav>
+        </div>
       )}
-    </motion.div>
+    </div>
   );
 }
