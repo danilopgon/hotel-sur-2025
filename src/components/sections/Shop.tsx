@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useReduceMotion } from '@/hooks/useReduceMotion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,7 +56,7 @@ export default function Shop() {
   const contentRef = useRef<HTMLDivElement>(null);
   const bentoRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
-
+  const reduceMotion = useReduceMotion();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -66,9 +67,6 @@ export default function Shop() {
   }, []);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
     if (reduceMotion || isMobile) return;
 
     const fadeUp = (
@@ -110,7 +108,7 @@ export default function Shop() {
     fadeUp(titleRef);
     fadeUp(contentRef, 'top 75%');
     fadeUp(bentoRef, 'top 70%');
-  }, [isMobile]);
+  }, [isMobile, reduceMotion]);
 
   return (
     <div className='relative min-h-screen'>

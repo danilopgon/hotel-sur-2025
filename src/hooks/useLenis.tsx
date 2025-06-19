@@ -4,14 +4,14 @@ import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
+import { useReduceMotion } from './useReduceMotion';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function useLenis() {
+  const reduceMotion = useReduceMotion();
+
   useEffect(() => {
-    const reduceMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
     if (reduceMotion) return;
 
     const lenis = new Lenis({
@@ -52,5 +52,5 @@ export function useLenis() {
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [reduceMotion]);
 }

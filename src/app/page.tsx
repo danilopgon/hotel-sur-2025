@@ -1,19 +1,21 @@
 'use client';
+import { useRef } from 'react';
+import LatestRelease from '@/components/sections/LatestRelease';
 import NextRelease from '@/components/sections/NextRelease';
 import AboutUs from '@/components/sections/AboutUs';
 import Shop from '@/components/sections/Shop';
-import { useRef } from 'react';
+import LatestVideo from '@/components/sections/LatestVideo';
 
 export default function Home() {
   const ref = useRef(null);
 
   return (
     <div ref={ref} className='relative'>
-      <div className='relative z-10 min-h-[350vh] overflow-hidden'>
-        <NextRelease />
-        <AboutUs />
-        <Shop />
-      </div>
+      <LatestRelease />
+      <LatestVideo />
+      <NextRelease />
+      <AboutUs />
+      <Shop />
     </div>
   );
 }

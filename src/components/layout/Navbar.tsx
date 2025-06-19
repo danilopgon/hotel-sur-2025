@@ -1,5 +1,6 @@
 'use client';
 import { Button } from '@/components/ui/button';
+import { useReduceMotion } from '@/hooks/useReduceMotion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
@@ -12,6 +13,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const reduceMotion = useReduceMotion();
 
   const navbarRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -34,9 +36,6 @@ export default function Navbar() {
   useEffect(() => {
     if (!navbarRef.current) return;
 
-    const reduceMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
     if (reduceMotion) return;
 
     let lastScrollY = window.scrollY;
@@ -72,7 +71,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
-  }, []);
+  }, [reduceMotion]);
 
   useEffect(() => {
     if (mobileMenuRef.current) {

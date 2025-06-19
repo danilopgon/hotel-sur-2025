@@ -26,7 +26,9 @@ export default function AboutUs() {
   }, []);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
     if (reduceMotion || isMobile) return;
 
     const animateOnScroll = (
@@ -64,7 +66,7 @@ export default function AboutUs() {
       <div className='relative z-10 min-h-screen flex flex-col justify-center items-center p-6 md:p-12'>
         <h2
           ref={titleRef}
-          className='text-2xl md:text-4xl font-bold text-primary mb-8 border-b-primary border-b-2 pb-4 uppercase'
+          className='text-3xl md:text-6xl font-bold text-primary mb-8 pb-4 uppercase'
         >
           Sobre nosotros
         </h2>
@@ -88,10 +90,7 @@ export default function AboutUs() {
           Escucha nuestros temas en Spotify:
         </p>
 
-        <div
-          ref={spotifyRef}
-          className='w-full max-w-3xl mt-8 mb-16 md:mb-8'
-        >
+        <div ref={spotifyRef} className='w-full max-w-3xl mt-8 mb-16 md:mb-8'>
           <iframe
             title='spotify player'
             style={{
