@@ -1,6 +1,6 @@
 # Hotel Sur - Sitio Web Oficial
 
-![screenshot-hotel-sur](https://github.com/user-attachments/assets/292b392f-7850-4fa8-b1d7-704f8745ea0c)
+![325shots_so](https://github.com/user-attachments/assets/505d9087-353a-4c25-b21c-f1b312e26d5a)
 
 Este es el repositorio del sitio web oficial de Hotel Sur, banda de rock y electrónica originaria de Tarancón (Cuenca).
 
