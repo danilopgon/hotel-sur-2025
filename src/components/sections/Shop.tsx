@@ -111,19 +111,21 @@ export default function Shop() {
   }, [isMobile, reduceMotion]);
 
   return (
-    <div className='relative min-h-screen'>
+    <section aria-labelledby='shop-title' className='relative min-h-screen'>
       <div ref={bgRef} className='absolute inset-0 bg-neutral-900 z-0'></div>
 
       <div className='relative z-10 min-h-screen flex flex-col justify-center items-center p-6 md:p-12'>
-        <div
+        <h2
           ref={titleRef}
+          id='shop-title'
           className='text-2xl md:text-4xl font-bold text-neutral-0 mb-4 uppercase mt-6 md:mt-0'
         >
           Merchandising
-        </div>
+        </h2>
 
         <p
           ref={contentRef}
+          id='shop-description'
           className='text-xl md:text-2xl text-neutral-0 max-w-2xl text-center mb-8'
         >
           Productos exclusivos de Hotel Sur
@@ -132,34 +134,48 @@ export default function Shop() {
         <div ref={bentoRef} className='w-full max-w-5xl'>
           <div className='grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4'>
             {merchProducts.map((product) => (
-              <a
+              <article
                 key={product.id}
-                href={product.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className={`${product.size} rounded-md shadow-lg overflow-hidden cursor-pointer transition-all hover:scale-[1.02] min-h-[400px]`}
+                aria-labelledby={`product-title-${product.id}`}
+                aria-describedby={`product-desc-${product.id}`}
+                className={`${product.size} rounded-md shadow-lg overflow-hidden transition-all hover:scale-[1.02] min-h-[400px]`}
               >
-                <div className='relative w-full h-full group'>
-                  <div
-                    className='absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-300 group-hover:opacity-0'
-                    style={{ backgroundImage: `url(${product.image})` }}
-                  ></div>
-                  <div
-                    className='absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-300 opacity-0 group-hover:opacity-100'
-                    style={{ backgroundImage: `url(${product.hoverImage})` }}
-                  ></div>
-                  <div className='relative z-10 bg-black/50 p-4 h-full flex flex-col justify-between'>
-                    <div>
-                      <h3 className='text-lg md:text-xl font-bold text-white'>
-                        {product.name}
-                      </h3>
-                      <p className='text-sm text-white/80 mt-1'>
-                        {product.description}
-                      </p>
+                <a
+                  href={product.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='block w-full h-full'
+                >
+                  <div className='relative w-full h-full group'>
+                    <div
+                      className='absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-300 group-hover:opacity-0'
+                      style={{ backgroundImage: `url(${product.image})` }}
+                      aria-hidden='true'
+                    ></div>
+                    <div
+                      className='absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-300 opacity-0 group-hover:opacity-100'
+                      style={{ backgroundImage: `url(${product.hoverImage})` }}
+                      aria-hidden='true'
+                    ></div>
+                    <div className='relative z-10 bg-black/50 p-4 h-full flex flex-col justify-between'>
+                      <div>
+                        <h3
+                          id={`product-title-${product.id}`}
+                          className='text-lg md:text-xl font-bold text-white'
+                        >
+                          {product.name}
+                        </h3>
+                        <p
+                          id={`product-desc-${product.id}`}
+                          className='text-sm text-white/80 mt-1'
+                        >
+                          {product.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </article>
             ))}
           </div>
 
@@ -168,6 +184,7 @@ export default function Shop() {
               href='https://tienda.hotelsur.es'
               target='_blank'
               rel='noopener noreferrer'
+              aria-label='Ver catálogo completo de productos de Hotel Sur'
             >
               <Button variant='default' className='bg-primary text-white'>
                 Ver todo el catálogo
@@ -176,6 +193,6 @@ export default function Shop() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

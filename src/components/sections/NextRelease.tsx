@@ -53,8 +53,14 @@ export default function NextRelease() {
   }, [reduceMotion]);
 
   return (
-    <section className='relative h-[160vh]'>
-      <div className='sticky top-0 h-screen w-full overflow-hidden'>
+    <section
+      className='relative h-[160vh]'
+      aria-labelledby='next-release-title'
+    >
+      <div
+        className='sticky top-0 h-screen w-full overflow-hidden'
+        aria-hidden='true'
+      >
         <div
           ref={bgRef}
           className='absolute inset-0 z-0'
@@ -66,7 +72,7 @@ export default function NextRelease() {
         />
         <div
           ref={grainRef}
-          className='absolute inset-0 z-5 pointer-events-none mix-blend-soft-light'
+          className='absolute inset-0 z-10 pointer-events-none mix-blend-soft-light'
           style={{
             backgroundImage: "url('/images/ruido.gif')",
             backgroundRepeat: 'repeat',
@@ -74,19 +80,23 @@ export default function NextRelease() {
         />
       </div>
 
-      <div className='absolute top-0 w-full h-screen flex justify-end items-end p-6 md:p-12 z-10'>
-        <div
+      <div className='absolute top-0 w-full h-screen flex justify-end items-end p-6 md:p-12 z-20'>
+        <hgroup
           ref={textRef}
+          aria-label='Información del próximo lanzamiento'
           className='pb-24 md:pb-36 text-right text-white drop-shadow-lg'
         >
-          <h1 className='text-4xl md:text-7xl font-bold uppercase'>
+          <h1
+            id='next-release-title'
+            className='text-4xl md:text-7xl font-bold uppercase'
+          >
             Aguas Rojas I
           </h1>
           <h3 className='text-xl md:text-2xl mt-4 uppercase'>
             Próximo lanzamiento
           </h3>
           <h2 className='text-md md:text-lg mt-4 uppercase'>26/06/2025</h2>
-        </div>
+        </hgroup>
       </div>
     </section>
   );

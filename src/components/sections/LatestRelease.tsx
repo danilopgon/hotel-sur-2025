@@ -21,7 +21,6 @@ export default function LatestRelease() {
     const text = textRef.current;
 
     if (!video || !wrapper || !grain || !text) return;
-
     if (reduceMotion) return;
 
     const onLoaded = () => {
@@ -69,8 +68,15 @@ export default function LatestRelease() {
   }, [reduceMotion]);
 
   return (
-    <div ref={wrapperRef} className='relative h-[350vh]'>
-      <div className='sticky top-0 h-screen w-full overflow-hidden z-0'>
+    <section
+      ref={wrapperRef}
+      className='relative h-[350vh]'
+      aria-labelledby='latest-release-title'
+    >
+      <div
+        className='sticky top-0 h-screen w-full overflow-hidden z-0'
+        aria-hidden='true'
+      >
         <div className='relative h-full w-full'>
           <video
             ref={videoRef}
@@ -79,6 +85,7 @@ export default function LatestRelease() {
             muted
             playsInline
             preload='auto'
+            aria-label='Visual del último lanzamiento de Hotel Sur'
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
               isVideoLoaded ? 'opacity-100' : 'opacity-0'
             }`}
@@ -87,6 +94,7 @@ export default function LatestRelease() {
           <div
             ref={grainRef}
             className='absolute inset-0 z-10 pointer-events-none mix-blend-soft-light'
+            aria-hidden='true'
             style={{
               backgroundImage: "url('/images/ruido.gif')",
               backgroundRepeat: 'repeat',
@@ -100,11 +108,14 @@ export default function LatestRelease() {
           ref={textRef}
           className='pb-16 md:pb-24 text-right text-primary drop-shadow-lg'
         >
-          <h1 className='text-6xl md:text-9xl font-bold uppercase'>
+          <h2
+            id='latest-release-title'
+            className='text-6xl md:text-9xl font-bold uppercase'
+          >
             Hotel Sur
-          </h1>
+          </h2>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

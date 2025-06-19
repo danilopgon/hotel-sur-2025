@@ -15,7 +15,7 @@ export function useLenis() {
     if (reduceMotion) return;
 
     const lenis = new Lenis({
-      lerp: 0.1,
+      lerp: 0.3,
       duration: 1.2,
       smoothWheel: true,
     });

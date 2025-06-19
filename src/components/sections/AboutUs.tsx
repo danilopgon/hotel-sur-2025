@@ -19,7 +19,6 @@ export default function AboutUs() {
 
     checkIsMobile();
     window.addEventListener('resize', checkIsMobile);
-
     return () => {
       window.removeEventListener('resize', checkIsMobile);
     };
@@ -61,11 +60,16 @@ export default function AboutUs() {
   }, [isMobile]);
 
   return (
-    <div className='relative min-h-screen'>
-      <div className='absolute inset-0 bg-neutral-0 z-0'></div>
-      <div className='relative z-10 min-h-screen flex flex-col justify-center items-center p-6 md:p-12'>
+    <section
+      className='relative min-h-screen bg-neutral-0'
+      aria-labelledby='about-title'
+    >
+      <div className='absolute inset-0 z-0'></div>
+
+      <div className='relative z-10 min-h-screen flex flex-col justify-center items-center p-6 py-12 md:p-12'>
         <h2
           ref={titleRef}
+          id='about-title'
           className='text-3xl md:text-6xl font-bold text-primary mb-8 pb-4 uppercase'
         >
           Sobre nosotros
@@ -90,13 +94,16 @@ export default function AboutUs() {
           Escucha nuestros temas en Spotify:
         </p>
 
-        <div ref={spotifyRef} className='w-full max-w-3xl mt-8 mb-16 md:mb-8'>
+        <div
+          ref={spotifyRef}
+          className='w-full max-w-3xl mt-8 mb-16 md:mb-8'
+          aria-label='Reproductor de Spotify'
+        >
           <iframe
-            title='spotify player'
+            title='Reproductor de Spotify: Hotel Sur'
             style={{
               borderRadius: '12px',
               zIndex: 4,
-              borderWidth: 0,
               border: 0,
             }}
             src='https://open.spotify.com/embed/artist/5ZsW4wbMl8qYFZ0L9xvBeu?utm_source=generator&theme=0'
@@ -107,6 +114,6 @@ export default function AboutUs() {
           ></iframe>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
