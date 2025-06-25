@@ -15,10 +15,13 @@ export default function LenisWrapper({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (reduceMotion) return;
 
+    const isMobile =
+      window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+
     const lenis = new Lenis({
-      lerp: 0.15,
-      duration: 1.2,
-      touchMultiplier: 1.5,
+      lerp: isMobile ? 0.03 : 0.15,
+      duration: isMobile ? 0.3 : 1.2,
+      touchMultiplier: isMobile ? 1 : 1.5,
     });
 
     lenisRef.current = lenis;

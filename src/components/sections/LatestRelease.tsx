@@ -103,14 +103,14 @@ export default function LatestRelease() {
         </div>
       </div>
 
-      <div className='sticky top-0 w-full h-screen flex justify-end items-end p-6 md:p-12 z-30 pointer-events-none'>
+      <div className='sticky top-0 w-full h-screen flex justify-center md:justify-end items-end p-6 md:p-12 z-30 pointer-events-none'>
         <div
           ref={textRef}
-          className='pb-16 md:pb-24 text-right text-primary drop-shadow-lg'
+          className='pb-24 text-center md:text-right text-primary drop-shadow-lg'
         >
           <h2
             id='latest-release-title'
-            className='text-6xl md:text-9xl font-bold uppercase'
+            className='text-5xl md:text-9xl font-bold uppercase'
           >
             Hotel Sur
           </h2>

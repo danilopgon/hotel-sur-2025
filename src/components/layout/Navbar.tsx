@@ -93,7 +93,7 @@ export default function Navbar() {
   return (
     <div
       ref={navbarRef}
-      className='fixed top-0 left-0 right-0 z-20 backdrop-blur-sm bg-neutral-700/80 opacity-100'
+      className='fixed top-0 left-0 right-0 backdrop-blur-sm bg-neutral-700/80 opacity-100 z-50'
     >
       <div className='container mx-auto flex justify-between items-center p-4'>
         <Link href='/'>
