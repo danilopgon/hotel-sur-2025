@@ -111,7 +111,7 @@ export default function Shop() {
   }, [isMobile, reduceMotion]);
 
   return (
-    <section aria-labelledby='shop-title' className='relative min-h-screen'>
+    <section aria-labelledby='shop-title' className='relative min-h-screen overflow-hidden'>
       <div ref={bgRef} className='absolute inset-0 bg-neutral-900 z-0'></div>
 
       <div className='relative z-10 min-h-screen flex flex-col justify-center items-center p-6 md:p-12'>
