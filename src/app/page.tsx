@@ -1,21 +1,25 @@
 'use client';
-import { useRef } from 'react';
-import LatestRelease from '@/components/sections/LatestRelease';
-import NextRelease from '@/components/sections/NextRelease';
+import {useRef} from 'react';
+import TrasLaTormenta from '@/components/sections/TrasLaTormenta';
+import AguasRojas from '@/components/sections/AguasRojas';
 import AboutUs from '@/components/sections/AboutUs';
 import Shop from '@/components/sections/Shop';
-import LatestVideo from '@/components/sections/LatestVideo';
+import TrasLaTormentaVideo from '@/components/sections/TrasLaTormentaVideo';
+import AguasRojasVideo from "@/components/sections/AguasRojasVideo";
+import NextRelease from "@/components/sections/NextRelease";
 
 export default function Home() {
-  const ref = useRef(null);
+    const ref = useRef(null);
 
-  return (
-    <div ref={ref} className='relative'>
-      <LatestRelease />
-      <LatestVideo />
-      <NextRelease />
-      <AboutUs />
-      <Shop />
-    </div>
-  );
+    return (
+        <div ref={ref} className='relative'>
+            <TrasLaTormenta/>
+            <TrasLaTormentaVideo/>
+            <AguasRojas/>
+            <AguasRojasVideo/>
+            <NextRelease/>
+            <AboutUs/>
+            <Shop/>
+        </div>
+    );
 }

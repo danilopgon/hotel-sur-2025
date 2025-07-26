@@ -6,7 +6,7 @@ import {useReduceMotion} from '@/hooks/useReduceMotion';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function NextRelease() {
+export default function AguasRojas() {
     const bgRef = useRef<HTMLDivElement>(null);
     const grainRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
@@ -65,7 +65,7 @@ export default function NextRelease() {
                     ref={bgRef}
                     className='absolute inset-0 z-0'
                     style={{
-                        backgroundImage: "url('/images/crisantemos.webp')",
+                        backgroundImage: "url('/images/aguas-rojas.webp')",
                         backgroundSize: 'cover',
                         backgroundPosition: 'center center',
                     }}
@@ -90,12 +90,11 @@ export default function NextRelease() {
                         id='next-release-title'
                         className='text-4xl md:text-7xl font-bold uppercase'
                     >
-                        Crisantemos
+                        Aguas Rojas I
                     </h1>
                     <h3 className='text-xl md:text-2xl mt-4 uppercase'>
-                        Próximo lanzamiento
+                        &#34;Sienta bien el aire en la cara&#34;
                     </h3>
-                    <h2 className='text-md md:text-lg mt-4 uppercase'>01/08/2025</h2>
                 </hgroup>
             </div>
         </section>
