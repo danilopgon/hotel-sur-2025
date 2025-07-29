@@ -63,7 +63,7 @@ export default function TrasLaTormentaVideo() {
                     ref={titleRef}
                     className='text-3xl md:text-6xl font-bold text-center text-primary mb-8 pb-4 uppercase'
                 >
-                    Lo que el río no pudo llevarse.
+                    Lo que el agua no pudo llevarse.
                 </h2>
 
                 <div
