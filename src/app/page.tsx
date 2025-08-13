@@ -7,6 +7,8 @@ import Shop from '@/components/sections/Shop';
 import TrasLaTormentaVideo from '@/components/sections/TrasLaTormentaVideo';
 import AguasRojasVideo from "@/components/sections/AguasRojasVideo";
 import NextRelease from "@/components/sections/NextRelease";
+import Crisantemos from '@/components/sections/Crisantemos';
+import CrisantemosVideo from "@/components/sections/CrisantemosVideo";
 
 export default function Home() {
     const ref = useRef(null);
@@ -17,6 +19,8 @@ export default function Home() {
             <TrasLaTormentaVideo/>
             <AguasRojas/>
             <AguasRojasVideo/>
+            <Crisantemos/>
+            <CrisantemosVideo/>
             <NextRelease/>
             <AboutUs/>
             <Shop/>

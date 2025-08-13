@@ -6,7 +6,7 @@ import {useReduceMotion} from '@/hooks/useReduceMotion';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function NextRelease() {
+export default function Crisantemos() {
     const bgRef = useRef<HTMLDivElement>(null);
     const grainRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
@@ -65,7 +65,7 @@ export default function NextRelease() {
                     ref={bgRef}
                     className='absolute inset-0 z-0'
                     style={{
-                        backgroundImage: "url('/images/ventolin.webp')",
+                        backgroundImage: "url('/images/crisantemos.webp')",
                         backgroundSize: 'cover',
                         backgroundPosition: 'center center',
                     }}
@@ -83,19 +83,18 @@ export default function NextRelease() {
             <div className='absolute top-0 w-full h-screen flex justify-end items-end p-6 md:p-12 z-20'>
                 <hgroup
                     ref={textRef}
-                    aria-label='Información del próximo lanzamiento'
+                    aria-label='Crisantemos, de Hotel Sur'
                     className='pb-24 md:pb-36 text-right text-white drop-shadow-lg'
                 >
                     <h1
                         id='next-release-title'
                         className='text-4xl md:text-7xl font-bold uppercase'
                     >
-                        Ventolín
+                        Crisantemos
                     </h1>
                     <h3 className='text-xl md:text-2xl mt-4 uppercase'>
-                        Próximo lanzamiento
+                        &#34;No hay rosas sin espinas&#34;
                     </h3>
-                    <h2 className='text-md md:text-lg mt-4 uppercase'>29/08/2025</h2>
                 </hgroup>
             </div>
         </section>
