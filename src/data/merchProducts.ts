@@ -1,0 +1,43 @@
+export const merchProducts = [
+    {
+        id: 1,
+        name: 'Taza - "Voy a Tener que Ser Dios"',
+        description: 'Taza (para ambidiestros) con diseño de Mónica Ríos',
+        image: '/images/taza-voy-a-tener-que-ser-dios.jpg',
+        hoverImage: '/images/taza-voy-a-tener-que-ser-dios-2.jpg',
+        url: 'https://tienda.hotelsur.es/en-eur/products/taza-voy-a-tener-que-ser-dios',
+        featured: true,
+        size: 'col-span-2 row-span-1 md:col-span-2',
+    },
+    {
+        id: 2,
+        name: 'Sudadera - "Ministerio del Ritmo"',
+        description: 'Nuestro sello, ahora con logo renovado',
+        image: '/images/sudadera-unisex-ministerio-del-ritmo.jpg',
+        hoverImage: '/images/sudadera-unisex-ministerio-del-ritmo-2.jpg',
+        url: 'https://tienda.hotelsur.es/en-eur/products/sudadera-unisex-ministerio-del-ritmo',
+        featured: false,
+        size: 'col-span-2 row-span-1 md:col-span-2',
+    },
+    {
+        id: 3,
+        name: 'Camiseta - "Voy a Tener que Ser Dios"',
+        description: 'Camiseta unisex con diseño de Mónica Ríos',
+        image: '/images/camiseta-unisex-voy-a-tener-que-ser-dios-granate.jpg',
+        hoverImage:
+            '/images/camiseta-unisex-voy-a-tener-que-ser-dios-granate-2.jpg',
+        url: 'https://tienda.hotelsur.es/en-eur/products/camiseta-unisex-voy-a-tener-que-ser-dios-granate',
+        featured: false,
+        size: 'col-span-2 row-span-1 md:col-span-2',
+    },
+    {
+        id: 4,
+        name: 'Print - "Casas Colgadas"',
+        description: 'Diseño de Dani para el concierto de Cuenca en 2022',
+        image: '/images/print-casas-colgadas.jpg',
+        hoverImage: '/images/print-casas-colgadas-2.jpg',
+        url: 'https://tienda.hotelsur.es/en-eur/products/print-casas-colgadas',
+        featured: true,
+        size: 'col-span-2 row-span-1 md:col-span-2',
+    },
+];
