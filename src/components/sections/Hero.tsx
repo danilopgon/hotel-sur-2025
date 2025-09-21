@@ -6,7 +6,7 @@ import {useReduceMotion} from '@/hooks/useReduceMotion';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function TrasLaTormenta() {
+export default function Hero() {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
     const grainRef = useRef<HTMLDivElement>(null);
@@ -85,7 +85,7 @@ export default function TrasLaTormenta() {
                         muted
                         playsInline
                         preload='auto'
-                        aria-label='Visual del último lanzamiento de Hotel Sur'
+                        aria-label='Visual del videoclip de Hotel Sur'
                         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                             isVideoLoaded ? 'opacity-100' : 'opacity-0'
                         }`}
@@ -113,10 +113,10 @@ export default function TrasLaTormenta() {
                         id='next-release-title'
                         className='text-4xl md:text-7xl font-bold uppercase'
                     >
-                        Tras La Tormenta
+                        Sobre La Gravedad
                     </h1>
                     <h3 className='text-xl md:text-2xl mt-4 uppercase'>
-                        “Llévame contigo y enséñame a volar”
+                        Segundo LP de Hotel Sur, muy pronto.
                     </h3>
                 </div>
             </div>
