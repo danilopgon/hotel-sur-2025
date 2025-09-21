@@ -14,7 +14,7 @@ export default function Releases() {
                     Singles de &#34;Sobre La Gravedad&#34;
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full md:auto-rows-[200px]">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full md:auto-rows-[350px]">
                     {musicReleases.map((r) => (
                         <ReleaseCard key={r.id} release={r}/>
                     ))}
